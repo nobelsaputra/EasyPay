@@ -48,6 +48,14 @@ public class Bayar extends javax.swing.JFrame {
         try {
             double amountReceived = Double.parseDouble(jTextField1.getText());
             double totalToPay = calculateTotal();
+
+            if (amountReceived < totalToPay) {
+                JOptionPane.showMessageDialog(this, "Jumlah uang yang diterima kurang!", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+                jTextField2.setText(""); // Kosongkan kembalian jika pembayaran batal
+                return; // Batalkan pembayaran
+            }
+
             double change = amountReceived - totalToPay;
             jTextField2.setText(String.valueOf(change));
         } catch (NumberFormatException e) {
@@ -149,6 +157,22 @@ public class Bayar extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        double totalToPay = calculateTotal();
+        double amountReceived = 0;
+
+        try {
+            amountReceived = Double.parseDouble(jTextField1.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Masukkan jumlah yang valid!", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Batalkan jika input tidak valid
+        }
+
+        if (amountReceived < totalToPay) {
+            JOptionPane.showMessageDialog(this, "Jumlah uang yang diterima kurang, pembayaran dibatalkan!", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return; // Batalkan pembayaran jika jumlah kurang
+        }
+
         saveToCSV();
         saveToPDF();
         JOptionPane.showMessageDialog(this, "Pembayaran berhasil!");
