@@ -1,0 +1,14 @@
+Nama Barang: Laptop Lenovo ThinkPad
+Harga Satuan: 10000000
+Jumlah: 1
+Pajak: 0%
+Diskon: 0%
+Total Harga: 10000000.00
+
+Nama Barang: Laptop Lenovo ThinkPad
+Harga Satuan: 10000000
+Jumlah: 1
+Pajak: 0%
+Diskon: 0%
+Total Harga: 10000000.00
+

@@ -1,0 +1,4 @@
+Laptop Lenovo ThinkPad,10000000
+Laptop Lenovo IdeaPad,8000000
+Laptop Lenovo Legion,15000000
+Laptop HP Pavilion,9000000
